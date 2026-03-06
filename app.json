@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "Lantern",
+    "slug": "lantern",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "lantern",
+    "userInterfaceStyle": "automatic",
+    "ios": { "supportsTablet": true },
+    "android": { "adaptiveIcon": { "backgroundColor": "#1a1a1a" } },
+    "web": { "bundler": "metro", "output": "static" },
+    "plugins": ["expo-router"],
+    "experiments": { "typedRoutes": true }
+  }
+}
