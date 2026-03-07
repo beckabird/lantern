@@ -8,10 +8,12 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "seed": "node scripts/seed.cjs"
   },
   "dependencies": {
     "@react-navigation/native": "^7.0.14",
+    "@supabase/supabase-js": "^2.98.0",
     "expo": "^55",
     "expo-constants": "~55.0.7",
     "expo-linking": "~55.0.7",
@@ -28,6 +30,7 @@
   "devDependencies": {
     "@babel/core": "^7.25.0",
     "@types/react": "~19.2.10",
+    "dotenv": "^17.3.1",
     "eslint": "^8.57.0",
     "eslint-config-expo": "~55.0.0",
     "typescript": "~5.9.2"
