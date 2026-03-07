@@ -11,7 +11,7 @@ export default function TabLayout() {
         tabBarInactiveTintColor: Colors.textMuted,
       }}
     >
-      <Tabs.Screen name="index" options={{ title: "Home" }} />
+      <Tabs.Screen name="home" options={{ title: "Home" }} />
     </Tabs>
   );
 }

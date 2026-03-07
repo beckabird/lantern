@@ -41,7 +41,7 @@ export default function LoginScreen() {
       setError("Please enter your password.");
       return;
     }
-    router.replace("/(tabs)" as any);
+    router.replace("/(tabs)/home");
   }
 
   return (

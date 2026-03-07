@@ -47,7 +47,7 @@ export default function SignupScreen() {
       setError("Passwords do not match.");
       return;
     }
-    router.replace("/(tabs)" as any);
+    router.replace("/(tabs)/home");
   }
 
   return (

@@ -127,7 +127,7 @@ export default function WelcomeScreen() {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => router.push("/(tabs)" as any)}
+            onPress={() => router.push("/(tabs)/home")}
             activeOpacity={0.7}
           >
             <Text style={styles.guestLink}>Continue as guest</Text>
