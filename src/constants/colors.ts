@@ -1,6 +1,6 @@
 export const Colors = {
-  background: "#0B0D1A",
-  cardBackground: "#181B2C",
+  background: "#0A0A1A",
+  cardBackground: "#0F0F2A",
   gold: "#C9A84C",
   goldLight: "#E0C46A",
   goldGlow: "rgba(201, 168, 76, 0.25)",

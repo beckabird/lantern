@@ -12,10 +12,12 @@
     "seed": "node scripts/seed.cjs"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^3.0.1",
     "@react-navigation/native": "^7.0.14",
     "@supabase/supabase-js": "^2.98.0",
     "expo": "^55",
     "expo-constants": "~55.0.7",
+    "expo-image-picker": "^55.0.11",
     "expo-linking": "~55.0.7",
     "expo-router": "~55.0.4",
     "expo-splash-screen": "~55.0.10",

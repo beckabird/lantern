@@ -101,7 +101,7 @@ export default function WelcomeScreen() {
         <View style={styles.heroSection}>
           <LanternIcon size={80} />
           <Text style={styles.appName}>Lantern</Text>
-          <Text style={styles.tagline}>LIGHT WHAT LASTS.</Text>
+          <Text style={[styles.tagline, { color: Colors.gold }]}>LIGHT WHAT LASTS.</Text>
         </View>
 
         <View style={styles.marketingSection}>
@@ -127,7 +127,7 @@ export default function WelcomeScreen() {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => router.push("/(tabs)/home")}
+            onPress={() => router.push("/(tabs)/feed")}
             activeOpacity={0.7}
           >
             <Text style={styles.guestLink}>Continue as guest</Text>
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
   },
   btnPrimary: {
     backgroundColor: Colors.gold,
-    borderRadius: 14,
+    borderRadius: 28,
     paddingVertical: 18,
     alignItems: "center",
   },
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
   btnSecondary: {
     borderWidth: 1.5,
     borderColor: Colors.gold,
-    borderRadius: 14,
+    borderRadius: 28,
     paddingVertical: 18,
     alignItems: "center",
     backgroundColor: "transparent",
