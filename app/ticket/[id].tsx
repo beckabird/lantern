@@ -31,6 +31,7 @@ export default function TicketDetailScreen() {
         Alert.alert("Permission Needed", "Camera roll permission is required.");
         return;
       }
+      await saveToLibraryAsync(`lantern-ticket-${ticket.id}`);
       Alert.alert("Saved!", "Ticket saved to camera roll.");
     } catch {
       Alert.alert("Info", "Media library not available in this environment.");
