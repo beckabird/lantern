@@ -3,13 +3,20 @@ import { Stack } from "expo-router";
 export { ErrorBoundary } from "expo-router";
 
 export const unstable_settings = {
-  initialRouteName: "(tabs)",
+  initialRouteName: "index",
 };
 
 export default function RootLayout() {
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index" />
+      <Stack.Screen name="(auth)" />
+      <Stack.Screen name="onboarding" />
+      <Stack.Screen name="(app)" />
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="flicker" />
+      <Stack.Screen name="ticket" />
+      <Stack.Screen name="purchase-oil" />
     </Stack>
   );
 }
