@@ -102,8 +102,12 @@ export default function ProfileScreen() {
             { label: "Dates Hosted", value: "4" },
             { label: "Wicks Won", value: "230" },
             { label: "Flame Rate", value: "92%" },
-          ].map((s) => (
-            <TouchableOpacity key={s.label} style={styles.statItem} onPress={handleStatTap}>
+          ].map((s, i, arr) => (
+            <TouchableOpacity
+              key={s.label}
+              style={[styles.statItem, i === arr.length - 1 && { borderRightWidth: 0 }]}
+              onPress={handleStatTap}
+            >
               <Text style={styles.statValue}>{s.value}</Text>
               <Text style={styles.statLabel}>{s.label}</Text>
             </TouchableOpacity>
