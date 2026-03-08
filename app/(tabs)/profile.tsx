@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as ImagePicker from "expo-image-picker";
 import { Colors } from "../../src/constants/colors";
+import { Durations } from "../../src/constants/durations";
 
 const DEFAULT_AVATAR = "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=300&q=80";
 const STORAGE_KEY_AVATAR = "lantern_avatar_uri";
@@ -60,7 +61,7 @@ export default function ProfileScreen() {
     }
   }
 
-  const isLitDateActive = litDate !== null && Date.now() - litDate < 30 * 24 * 60 * 60 * 1000;
+  const isLitDateActive = litDate !== null && Date.now() - litDate < Durations.litDateBadgeMs;
 
   return (
     <SafeAreaView style={styles.safe}>

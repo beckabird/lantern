@@ -10,7 +10,7 @@ import {
   Dimensions,
   ImageBackground,
 } from "react-native";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Colors } from "../../src/constants/colors";
 
 const { width } = Dimensions.get("window");
@@ -31,12 +31,16 @@ const ITEMS = [
 export default function DiscoverScreen() {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const filtered = activeFilter === "All"
-    ? ITEMS
-    : ITEMS.filter(i => i.category.toLowerCase() === activeFilter.toLowerCase());
+  const filtered = useMemo(
+    () =>
+      activeFilter === "All"
+        ? ITEMS
+        : ITEMS.filter((i) => i.category.toLowerCase() === activeFilter.toLowerCase()),
+    [activeFilter]
+  );
 
-  const leftCol = filtered.filter((_, i) => i % 2 === 0);
-  const rightCol = filtered.filter((_, i) => i % 2 !== 0);
+  const leftCol = useMemo(() => filtered.filter((_, i) => i % 2 === 0), [filtered]);
+  const rightCol = useMemo(() => filtered.filter((_, i) => i % 2 !== 0), [filtered]);
 
   return (
     <SafeAreaView style={styles.safe}>

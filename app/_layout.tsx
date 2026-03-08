@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Colors } from "../src/constants/colors";
+import { Durations } from "../src/constants/durations";
 
 export { ErrorBoundary } from "expo-router";
 
@@ -67,10 +68,10 @@ export default function RootLayout() {
       try {
         const snuffsStr = await AsyncStorage.getItem(STORAGE_KEY_SNUFFS);
         const snuffs = snuffsStr ? Number(snuffsStr) : 0;
-        if (snuffs >= 3) {
+        if (snuffs >= Durations.snuffBanThreshold) {
           let banUntilTs = await AsyncStorage.getItem(SNUFF_BAN_KEY);
           if (!banUntilTs) {
-            const until = Date.now() + 14 * 24 * 60 * 60 * 1000;
+            const until = Date.now() + Durations.snuffBanMs;
             await AsyncStorage.setItem(SNUFF_BAN_KEY, String(until));
             banUntilTs = String(until);
           }

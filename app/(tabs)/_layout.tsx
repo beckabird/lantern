@@ -70,7 +70,7 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: "#080816",
+          backgroundColor: Colors.background,
           borderTopColor: "rgba(201,168,76,0.2)",
           borderTopWidth: 1,
           height: Platform.OS === "ios" ? 84 : 64,
