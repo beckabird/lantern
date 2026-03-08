@@ -160,6 +160,13 @@ export default function HowItWorksScreen() {
 
         <View style={styles.header}>
           <View style={styles.headerLeft}>
+            <TouchableOpacity
+              style={styles.backBtn}
+              onPress={() => router.back()}
+              hitSlop={{ top: 12, right: 12, bottom: 12, left: 12 }}
+            >
+              <Ionicons name="arrow-back" size={22} color={Colors.textMuted} />
+            </TouchableOpacity>
             <View style={styles.headerBrand}>
               <LanternHeaderIcon />
               <Text style={styles.headerTitle}>Lantern</Text>
@@ -256,6 +263,10 @@ const styles = StyleSheet.create({
   },
   headerLeft: {
     flex: 1,
+  },
+  backBtn: {
+    marginBottom: 8,
+    alignSelf: "flex-start",
   },
   headerBrand: {
     flexDirection: "row",

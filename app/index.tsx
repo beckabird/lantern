@@ -6,15 +6,58 @@ import {
   SafeAreaView,
   StatusBar,
   Platform,
+  Animated,
 } from "react-native";
+import { useEffect, useRef } from "react";
 import { router } from "expo-router";
 import { Colors } from "../src/constants/colors";
 
 function LanternIcon({ size = 72 }: { size?: number }) {
+  const glowAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(glowAnim, {
+          toValue: 1,
+          duration: 1200,
+          useNativeDriver: true,
+        }),
+        Animated.timing(glowAnim, {
+          toValue: 0,
+          duration: 1200,
+          useNativeDriver: true,
+        }),
+      ])
+    ).start();
+  }, [glowAnim]);
+
+  const glowOpacity = glowAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0.15, 0.55],
+  });
+  const glowScale = glowAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [1, 1.18],
+  });
+
   const bodyW = size * 0.78;
   const bodyH = size * 0.88;
   return (
     <View style={{ alignItems: "center" }}>
+      {/* Pulsing glow halo */}
+      <Animated.View
+        style={{
+          position: "absolute",
+          top: size * 0.08,
+          width: bodyW * 1.5,
+          height: bodyH * 1.5,
+          borderRadius: size * 0.5,
+          backgroundColor: Colors.gold,
+          opacity: glowOpacity,
+          transform: [{ scale: glowScale }],
+        }}
+      />
       <View
         style={{
           width: size * 0.22,
@@ -36,7 +79,7 @@ function LanternIcon({ size = 72 }: { size?: number }) {
           backgroundColor: "rgba(201,168,76,0.08)",
         }}
       >
-        <Text style={{ fontSize: size * 0.38, lineHeight: size * 0.44 }}>♥</Text>
+        <Text style={{ fontSize: size * 0.38, lineHeight: size * 0.44 }}>🕯️</Text>
       </View>
       <View
         style={{
@@ -127,7 +170,7 @@ export default function WelcomeScreen() {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => router.push("/(tabs)/home")}
+            onPress={() => router.push("/(app)/home")}
             activeOpacity={0.7}
           >
             <Text style={styles.guestLink}>Continue as guest</Text>
