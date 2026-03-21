@@ -41,7 +41,7 @@ export default function LoginScreen() {
       setError("Please enter your password.");
       return;
     }
-    router.replace("/(tabs)/home");
+    router.replace("/(tabs)/feed");
   }
 
   return (
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
   },
   btnPrimary: {
     backgroundColor: Colors.gold,
-    borderRadius: 14,
+    borderRadius: 28,
     paddingVertical: 18,
     alignItems: "center",
   },

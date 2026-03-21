@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
   },
   btnPrimary: {
     backgroundColor: Colors.gold,
-    borderRadius: 14,
+    borderRadius: 28,
     paddingVertical: 18,
     alignItems: "center",
   },
@@ -350,7 +350,7 @@ const styles = StyleSheet.create({
   btnSecondary: {
     borderWidth: 1.5,
     borderColor: Colors.goldBorder,
-    borderRadius: 14,
+    borderRadius: 28,
     paddingVertical: 18,
     alignItems: "center",
     backgroundColor: "transparent",
